@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Name - Projects</title>
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #3498db;
+            --background-color: #f4f4f4;
+        }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            background-color: var(--background-color);
+        }
+        .navbar {
+            background-color: var(--primary-color);
+            display: flex;
+            justify-content: center;
+            padding: 1rem;
+        }
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+        .navbar a:hover {
+            color: var(--secondary-color);
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+            padding: 20px;
+        }
+        .project {
+            background-color: white;
+            margin-bottom: 20px;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        .project h3 {
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <a href="index.html">Home</a>
+        <a href="projects.html">Projects</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+
+    <div class="container">
+        <h1>My Projects</h1>
+
+        <div class="project">
+            <h3>Persian Grapheme To Phoneme</h3>
+            <p>Implemented a Persian grapheme to phoneme model with a sequence to sequence transformer. Two variations of the model
+                were trained: one with 3 encoders and 3 decoders and another with 5 encoders and 5 decoders. The larger model achieved a
+                word error rate of 26.5% and a phonetic error rate of 6.19% on the test set. Source code and checkpoints are available at:</p>
+            <a href="https://github.com/sajadalipour7/Persian-Grapheme-To-Phoneme-With-Transformer">Project Link</a>
+        </div>
+
+        <div class="project">
+            <h3>Discovering faster matrix multiplication algorithm with optimization</h3>
+            <p>Utilized IPOPT optimizer and pyomo library in order to find different 2x2 matrix multiplication algorithms with 7 scalar
+                multiplications. This work was inspired by the AlphaTensor paper. Source code available at:</p>
+            <a href="https://github.com/sajadalipour7/Discovering-faster-matrix-multiplication-algorithm-with-optimization">Project Link</a>
+        </div>
+
+        <div class="project">
+            <h3>Infromation Retrieval</h3>
+            <p>Implemented a search engine using an inverted index and basic techniques. Enhanced the search engine by incorporating the
+                tf-idf method, improving ranking of search results. Implemented index elimination and champions list techniques for
+                optimization. Utilized Elasticsearch to expand capabilities, including spell correction, boolean query handling, and k-nearest
+                neighbor algorithm for more accurate results. Source code available at:</p>
+            <a href="https://github.com/sajadalipour7/Information-Retrieval">Project Link</a>
+        </div>
+    </div>
+</body>
+</html>

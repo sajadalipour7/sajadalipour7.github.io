@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Name - Portfolio</title>
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #3498db;
+            --background-color: #f4f4f4;
+        }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            background-color: var(--background-color);
+        }
+        .navbar {
+            background-color: var(--primary-color);
+            display: flex;
+            justify-content: center;
+            padding: 1rem;
+        }
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+        .navbar a:hover {
+            color: var(--secondary-color);
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+            padding: 20px;
+        }
+        .profile {
+            display: flex;
+            align-items: center;
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        .profile-image {
+            width: 250px;
+            height: 250px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-right: 30px;
+        }
+        .profile-details h1 {
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+        .section {
+            margin-top: 30px;
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <a href="index.html">Home</a>
+        <a href="projects.html">Projects</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+
+    <div class="container">
+        <section class="profile">
+            <div class="profile-details">
+                <h1>MohammadSajad Alipour</h1>
+                <p>PhD student | Computer Science</p>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>About Me</h2>
+            <p>I am a PhD student in Computer Science at Rensselaer Polytechnic Institute (RPI), advised by <a href="https://mmamiri.github.io/">Dr. Mohammad Mohammadi Amiri</a>. My research focuses on efficient fine-tuning, inference, and storage of large language models (LLMs), with the aim of making advanced AI systems more scalable and accessible. I earned my Bachelor’s degree in Computer Engineering from Amirkabir University of Technology.</p>
+        </section>
+    </div>
+</body>
+</html>
