@@ -1,94 +1,379 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sajad Alipour</title>
-    <style>
-        :root {
-            --primary-color: #2c3e50;
-            --secondary-color: #3498db;
-            --background-color: #f4f4f4;
-        }
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        body {
-            font-family: 'Arial', sans-serif;
-            line-height: 1.6;
-            background-color: var(--background-color);
-        }
-        .navbar {
-            background-color: var(--primary-color);
-            display: flex;
-            justify-content: center;
-            padding: 1rem;
-        }
-        .navbar a {
-            color: white;
-            text-decoration: none;
-            margin: 0 15px;
-            font-weight: bold;
-            transition: color 0.3s ease;
-        }
-        .navbar a:hover {
-            color: var(--secondary-color);
-        }
-        .container {
-            width: 80%;
-            margin: auto;
-            overflow: hidden;
-            padding: 20px;
-        }
-        .profile {
-            display: flex;
-            align-items: center;
-            background-color: white;
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-        }
-        .profile-image {
-            width: 250px;
-            height: 250px;
-            border-radius: 50%;
-            object-fit: cover;
-            margin-right: 30px;
-        }
-        .profile-details h1 {
-            color: var(--primary-color);
-            margin-bottom: 10px;
-        }
-        .section {
-            margin-top: 30px;
-            background-color: white;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-        }
-    </style>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>MohammadSajad Alipour</title>
+  <meta name="description" content="MohammadSajad Alipour — PhD student in Computer Science at RPI." />
+  <style>
+    :root {
+      --bg: #ffffff;
+      --fg: #0f172a;            /* slate-900 */
+      --muted: #475569;         /* slate-600 */
+      --border: #e2e8f0;        /* slate-200 */
+      --link: #2563eb;          /* blue-600 */
+      --maxw: 880px;
+      --radius: 14px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+      color: var(--fg);
+      background: var(--bg);
+      line-height: 1.6;
+    }
+
+    a { color: var(--link); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    .wrap {
+      max-width: var(--maxw);
+      padding: 28px 18px 64px;
+      margin: 0 auto;
+    }
+
+    /* top nav */
+    .topbar {
+      position: sticky;
+      top: 0;
+      backdrop-filter: blur(10px);
+      background: rgba(255,255,255,.86);
+      border-bottom: 1px solid var(--border);
+      z-index: 10;
+    }
+    .topbar-inner {
+      max-width: var(--maxw);
+      margin: 0 auto;
+      padding: 10px 18px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+    }
+    .brand {
+      font-weight: 650;
+      letter-spacing: .2px;
+      white-space: nowrap;
+    }
+    .nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      justify-content: flex-end;
+    }
+    .nav a {
+      color: var(--muted);
+      font-weight: 550;
+      font-size: 14px;
+      padding: 6px 8px;
+      border-radius: 10px;
+    }
+    .nav a:hover {
+      background: #f1f5f9;
+      text-decoration: none;
+      color: var(--fg);
+    }
+
+    /* header */
+    header {
+      display: grid;
+      grid-template-columns: 120px 1fr;
+      gap: 18px;
+      align-items: center;
+      margin-top: 18px;
+      padding: 18px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+    }
+    .avatar {
+      width: 120px;
+      height: 120px;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      object-fit: cover;
+      background: #f8fafc;
+    }
+    .title h1 {
+      margin: 0;
+      font-size: clamp(22px, 3.2vw, 30px);
+      line-height: 1.2;
+      letter-spacing: .2px;
+    }
+    .subtitle {
+      margin-top: 6px;
+      color: var(--muted);
+      font-size: 15px;
+    }
+    .links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px 14px;
+      margin-top: 10px;
+      font-size: 14px;
+      color: var(--muted);
+    }
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      border: 1px solid var(--border);
+      padding: 6px 10px;
+      border-radius: 999px;
+      color: var(--muted);
+      background: #fff;
+    }
+
+    /* sections */
+    section {
+      margin-top: 22px;
+      padding: 18px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+    }
+    h2 {
+      margin: 0 0 10px;
+      font-size: 16px;
+      letter-spacing: .2px;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+    p { margin: 10px 0; }
+
+    .list {
+      display: grid;
+      gap: 12px;
+      margin-top: 10px;
+    }
+    .item {
+      padding: 12px 12px;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      background: #fff;
+    }
+    .item .head {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 10px;
+      margin-bottom: 4px;
+    }
+    .item .name {
+      font-weight: 650;
+    }
+    .item .meta {
+      color: var(--muted);
+      font-size: 13px;
+      white-space: nowrap;
+    }
+    .item .desc {
+      color: var(--fg);
+      margin: 6px 0 0;
+    }
+
+    ul.clean {
+      margin: 8px 0 0;
+      padding-left: 18px;
+    }
+    ul.clean li { margin: 6px 0; }
+
+    footer {
+      margin-top: 18px;
+      color: var(--muted);
+      font-size: 13px;
+      text-align: center;
+    }
+    .name a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .name a:hover {
+      text-decoration: underline;
+    }
+
+    /* mobile tweaks */
+    @media (max-width: 560px) {
+      header { grid-template-columns: 1fr; text-align: left; }
+      .avatar { width: 96px; height: 96px; }
+      .topbar-inner { align-items: flex-start; flex-direction: column; }
+      .nav { justify-content: flex-start; }
+    }
+  </style>
 </head>
+
 <body>
-    <nav class="navbar">
-        <a href="index.html">Home</a>
-        <a href="projects.html">Projects</a>
-        <a href="contact.html">Contact</a>
-    </nav>
-
-    <div class="container">
-        <section class="profile">
-            <div class="profile-details">
-                <h1>MohammadSajad Alipour</h1>
-                <p>PhD student | Computer Science</p>
-            </div>
-        </section>
-
-        <section class="section">
-            <h2>About Me</h2>
-            <p>I am a PhD student in Computer Science at Rensselaer Polytechnic Institute (RPI), advised by <a href="https://mmamiri.github.io/" target="_blank">Dr. Mohammad Mohammadi Amiri</a>. My research focuses on efficient fine-tuning, inference, and storage of large language models (LLMs), with the aim of making advanced AI systems more scalable and accessible. I earned my Bachelor’s degree in Computer Engineering from Amirkabir University of Technology.</p>
-        </section>
+  <div class="topbar" role="navigation" aria-label="Page navigation">
+    <div class="topbar-inner">
+      <div class="brand">MohammadSajad Alipour</div>
+      <nav class="nav">
+        <a href="#about">About</a>
+        <a href="#interests">Research</a>
+        <a href="#publications">Publications</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+      </nav>
     </div>
+  </div>
+
+  <main class="wrap">
+    <header>
+      <!-- Put your photo next to this file as: profile.jpg (or change the src below). -->
+      <img class="avatar" src="img.jpg" alt="Portrait of Mohammadsajad Alipour" />
+
+      <div class="title">
+        <h1>MohammadSajad Alipour</h1>
+        <div class="subtitle">PhD student · Computer Science · Rensselaer Polytechnic Institute (RPI)</div>
+
+        <div class="links" aria-label="Quick links">
+          <span class="pill">Advisor: <a href="https://mmamiri.github.io/" target="_blank" rel="noopener">Mohammad Mohammadi Amiri</a></span>
+          <span class="pill"><a href="#contact">Links & contact</a></span>
+          <!-- Optional: add a CV link if you have one. Example: <span class="pill"><a href="cv.pdf" target="_blank">CV (PDF)</a></span> -->
+        </div>
+      </div>
+    </header>
+
+    <section id="about">
+      <h2>About</h2>
+      <p>
+        I am a PhD student in Computer Science at Rensselaer Polytechnic Institute (RPI). My research focuses on building learning systems that are efficient, modular, and reliable, from low-rank adaptation and compression methods to multi-agent systems and representation learning. I earned my Bachelor’s degree in Computer Engineering from Amirkabir University of Technology.
+      </p>
+    </section>
+
+    <section id="interests">
+      <h2>Research Interests</h2>
+      <ul class="clean">
+        <li>Multi-agent Systems</li>
+        <li>Model merging</li>
+        <li>Causal Representation Learning</li>
+        <li>Efficient inference and post-training compression for large language models</li>
+        <li>Efficient fine-tuning and alignment</li>
+        <li>Data valuation and Coreset selection</li>
+      </ul>
+    </section>
+
+    <section id="publications">
+  <h2>Publications</h2>
+  <div class="list">
+
+    <div class="item">
+      <div class="head">
+        <div class="name">
+          <a href="https://arxiv.org/abs/2510.14163" target="_blank" rel="noopener">
+            Towards Reversible Model Merging for Low-rank Weights
+          </a>
+        </div>
+        <div class="meta">Preprint · 2025</div>
+      </div>
+      <div class="desc">
+        <span><strong>M. Alipour</strong>, M. M. Amiri.</span>
+      </div>
+    </div>
+
+    <div class="item">
+      <div class="head">
+        <div class="name">
+          <a href="https://arxiv.org/abs/2511.02681" target="_blank" rel="noopener">
+            Optimal Singular Damage: Efficient LLM Inference in Low Storage Regimes
+          </a>
+        </div>
+        <div class="meta">Preprint · 2025</div>
+      </div>
+      <div class="desc">
+        <span><strong>M. Alipour</strong>, M. M. Amiri.</span>
+      </div>
+    </div>
+
+    <div class="item">
+      <div class="head">
+        <div class="name">
+          <a href="https://arxiv.org/abs/2510.22149" target="_blank" rel="noopener">
+            Power to the Clients: Federated Learning in a Dictatorship Setting
+          </a>
+        </div>
+        <div class="meta">Under review · 2025</div>
+      </div>
+      <div class="desc">
+        <span><strong>M. Alipour</strong>, M. M. Amiri.</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+    </section>
+
+    <section id="projects">
+      <h2>Open-source Projects</h2>
+      <div class="list">
+        <div class="item">
+          <div class="head">
+            <div class="name">Persian Grapheme to Phoneme</div>
+            <div class="meta">Seq2Seq Transformer</div>
+          </div>
+          <p class="desc">
+            Implemented a Persian grapheme-to-phoneme model with a sequence-to-sequence transformer. Trained two variants and evaluated on a test set.
+            <a href="https://github.com/sajadalipour7/Persian-Grapheme-To-Phoneme-With-Transformer" target="_blank" rel="noopener">Code</a>
+          </p>
+        </div>
+
+        <div class="item">
+          <div class="head">
+            <div class="name">Faster Matrix Multiplication via Optimization</div>
+            <div class="meta">IPOPT + Pyomo</div>
+          </div>
+          <p class="desc">
+            Used IPOPT and Pyomo to search for 2×2 matrix multiplication algorithms with 7 scalar multiplications (inspired by AlphaTensor).
+            <a href="https://github.com/sajadalipour7/Discovering-faster-matrix-multiplication-algorithm-with-optimization" target="_blank" rel="noopener">Code</a>
+          </p>
+        </div>
+
+        <div class="item">
+          <div class="head">
+            <div class="name">Information Retrieval</div>
+            <div class="meta">Search engine</div>
+          </div>
+          <p class="desc">
+            Built an inverted-index search engine with TF-IDF ranking and optimization techniques, and extended it with Elasticsearch.
+            <a href="https://github.com/sajadalipour7/Information-Retrieval" target="_blank" rel="noopener">Code</a>
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+  <h2>Contact</h2>
+  <ul class="clean">
+    <li>
+      <a href="https://scholar.google.com/citations?user=njM4MQ0AAAAJ&hl=en"
+         target="_blank" rel="noopener">
+         Google Scholar
+      </a>
+    </li>
+    <li>
+      <a href="https://github.com/sajadalipour7"
+         target="_blank" rel="noopener">
+         GitHub
+      </a>
+    </li>
+    <li>
+      <a href="https://www.linkedin.com/in/sajad-alipour-938ba223b"
+         target="_blank" rel="noopener">
+         LinkedIn
+      </a>
+    </li>
+  </ul>
+</section>
+
+    
+  </main>
+
+  <script>
+    // keep the footer year current
+    document.getElementById('y').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
